@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Tanziya 🎂</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Lato:wght@300;400&family=Dancing+Script:wght@600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     COUNTDOWN SCENE
+══════════════════════════════════ -->
+<div id="countdown-scene" class="scene active">
+  <div class="star-layer"></div>
+  <div class="skyline"></div>
+  <div class="horizon-glow"></div>
+
+  <!-- LA City lights -->
+  <div class="city-lights"></div>
+
+  <div class="countdown-wrap">
+    <div class="messages">
+      <p class="msg" id="msg1">Hey babygal. 🌙</p>
+      <p class="msg" id="msg2">I have something for you.</p>
+      <p class="msg" id="msg3">The night is waiting for Tanziya.</p>
+    </div>
+
+    <div class="cd-row">
+      <div class="cd-photo" id="cd-photo">
+        <img src="assets/images/photo1.jpg" alt="Tanziya"/>
+      </div>
+      <div class="cd-timer">
+        <p class="timer-label">She arrives in</p>
+        <div class="digits">
+          <div class="dg"><span id="t-days">00</span><label>Days</label></div>
+          <span class="sep">:</span>
+          <div class="dg"><span id="t-hours">00</span><label>Hours</label></div>
+          <span class="sep">:</span>
+          <div class="dg"><span id="t-mins">00</span><label>Mins</label></div>
+          <span class="sep">:</span>
+          <div class="dg"><span id="t-secs">00</span><label>Secs</label></div>
+        </div>
+        <p class="timer-sub">until March 14 · midnight</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     SHREK SURPRISE (shows at midnight)
+══════════════════════════════════ -->
+<div id="shrek-scene" class="scene">
+  <div class="shrek-bg"></div>
+  <img src="assets/images/shrek.jpg" alt="Happy Birthday Girl" class="shrek-img" id="shrek-img"/>
+  <p class="shrek-text" id="shrek-text">HAPPY BIRTHDAY GIRL 🎉</p>
+</div>
+
+<!-- ══════════════════════════════════
+     BIRTHDAY SCENE
+══════════════════════════════════ -->
+<div id="birthday-scene" class="scene">
+  <div class="star-layer"></div>
+  <div class="skyline"></div>
+  <div class="horizon-glow warm"></div>
+  <div class="city-lights warm"></div>
+
+  <!-- Fireworks canvas -->
+  <canvas id="fireworks-canvas"></canvas>
+
+  <!-- Sparkles -->
+  <div id="sparkles"></div>
+
+  <!-- Scene parallax wrap -->
+  <div id="scene-wrap">
+
+    <!-- Floating photos top -->
+    <div class="float-photos">
+      <div class="photo-frame f1" id="fp1">
+        <img src="assets/images/photo2.jpg" alt="Tanziya"/>
+        <div class="frame-label">Tanziya 💕</div>
+      </div>
+      <div class="photo-frame f2" id="fp2">
+        <img src="assets/images/photo3.jpg" alt="Tanziya"/>
+        <div class="frame-label">Always iconic ✨</div>
+      </div>
+    </div>
+
+    <!-- TABLE SCENE -->
+    <div class="table-scene" id="table-scene">
+
+      <!-- Bouquet left -->
+      <div class="bouquet left" id="bouquet-left">
+        <svg viewBox="0 0 120 200" width="120" height="200">
+          <line x1="60" y1="200" x2="55" y2="90" stroke="#5a8a5a" stroke-width="3.5"/>
+          <line x1="60" y1="200" x2="38" y2="85" stroke="#5a8a5a" stroke-width="3"/>
+          <line x1="60" y1="200" x2="78" y2="88" stroke="#5a8a5a" stroke-width="3"/>
+          <line x1="60" y1="200" x2="20" y2="100" stroke="#4a7a4a" stroke-width="2.5"/>
+          <line x1="60" y1="200" x2="95" y2="98" stroke="#4a7a4a" stroke-width="2.5"/>
+          <ellipse cx="45" cy="145" rx="16" ry="7" fill="#6aaa6a" opacity=".85" transform="rotate(-40 45 145)"/>
+          <ellipse cx="75" cy="150" rx="14" ry="6" fill="#5a9a5a" opacity=".85" transform="rotate(35 75 150)"/>
+          <ellipse cx="30" cy="130" rx="13" ry="5" fill="#6aaa6a" opacity=".7" transform="rotate(-55 30 130)"/>
+          <g transform="translate(55,88)"><circle r="18" fill="#e05070"/><circle r="12" fill="#ea7090"/><circle r="7" fill="#f5a0b5"/><circle r="3" fill="#ffd0e0"/></g>
+          <g transform="translate(36,82)"><circle r="14" fill="#c83060"/><circle r="9" fill="#e06080"/><circle r="5" fill="#f090a8"/><circle r="2" fill="#ffd0e0"/></g>
+          <g transform="translate(78,85)"><circle r="14" fill="#d04068"/><circle r="9" fill="#e87090"/><circle r="5" fill="#f5a0b8"/><circle r="2" fill="#ffd0e0"/></g>
+          <g transform="translate(18,97)"><circle r="11" fill="#b82858"/><circle r="7" fill="#d45878"/><circle r="4" fill="#ec98b0"/></g>
+          <g transform="translate(96,95)"><circle r="11" fill="#c03060"/><circle r="7" fill="#e06080"/><circle r="4" fill="#f090a8"/></g>
+          <circle cx="48" cy="68" r="3" fill="#fff" opacity=".8"/>
+          <circle cx="65" cy="62" r="2.5" fill="#fff" opacity=".7"/>
+          <circle cx="85" cy="72" r="2.5" fill="#fff" opacity=".75"/>
+          <path d="M45 190 Q60 180 75 190 Q60 185 45 190Z" fill="#f5a0c0" opacity=".9"/>
+          <ellipse cx="45" cy="190" rx="12" ry="6" fill="#f080a8" opacity=".8" transform="rotate(-20 45 190)"/>
+          <ellipse cx="75" cy="190" rx="12" ry="6" fill="#f080a8" opacity=".8" transform="rotate(20 75 190)"/>
+          <circle cx="60" cy="188" r="5" fill="#e05080"/>
+        </svg>
+      </div>
+
+      <!-- CAKE -->
+      <div class="cake-wrap" id="cake-wrap">
+        <div class="glow-halo" id="glow-halo"></div>
+        <svg id="cake-svg" viewBox="0 0 320 340" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="160" cy="318" rx="130" ry="16" fill="rgba(0,0,0,.25)"/>
+          <ellipse cx="160" cy="308" rx="128" ry="13" fill="#d4a882"/>
+          <ellipse cx="160" cy="305" rx="124" ry="10" fill="#e8c09a"/>
+          <!-- Bottom tier -->
+          <rect x="28" y="232" width="264" height="74" rx="10" fill="#f7cfc5"/>
+          <rect x="28" y="232" width="264" height="20" rx="10" fill="#fce8e4"/>
+          <path d="M50 232 Q62 215 74 232 Q86 215 98 232 Q110 215 122 232 Q134 215 146 232 Q158 215 170 232 Q182 215 194 232 Q206 215 218 232 Q230 215 242 232 Q254 215 266 232 Q278 215 288 232" stroke="white" stroke-width="2.5" fill="none" opacity=".8"/>
+          <circle cx="55" cy="260" r="10" fill="#e07090"/><circle cx="55" cy="260" r="6" fill="#f5a0b5"/>
+          <circle cx="265" cy="260" r="10" fill="#e07090"/><circle cx="265" cy="260" r="6" fill="#f5a0b5"/>
+          <circle cx="160" cy="268" r="8" fill="#d06080"/><circle cx="160" cy="268" r="4" fill="#f090a8"/>
+          <text x="160" y="290" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#c06080" opacity=".85">✦ ✦ ✦</text>
+          <!-- Middle tier -->
+          <rect x="62" y="162" width="196" height="73" rx="10" fill="#fbd4de"/>
+          <rect x="62" y="162" width="196" height="18" rx="10" fill="#fde8ef"/>
+          <path d="M80 162 Q92 145 104 162 Q116 145 128 162 Q140 145 152 162 Q164 145 176 162 Q188 145 200 162 Q212 145 224 162 Q236 145 244 162" stroke="white" stroke-width="2.5" fill="none" opacity=".8"/>
+          <circle cx="85" cy="195" r="8" fill="#e07090"/><circle cx="85" cy="195" r="4" fill="#f5a0b5"/>
+          <circle cx="235" cy="195" r="8" fill="#e07090"/><circle cx="235" cy="195" r="4" fill="#f5a0b5"/>
+          <text x="160" y="220" text-anchor="middle" font-family="Georgia,serif" font-size="22" font-weight="bold" fill="#c06080" opacity=".9">18</text>
+          <!-- Top tier -->
+          <rect x="96" y="100" width="128" height="64" rx="10" fill="#f8bfcc"/>
+          <rect x="96" y="100" width="128" height="16" rx="10" fill="#fcd4de"/>
+          <path d="M110 100 Q120 84 130 100 Q140 84 150 100 Q160 84 170 100 Q180 84 190 100 Q200 84 210 100" stroke="white" stroke-width="2.5" fill="none" opacity=".8"/>
+          <text x="160" y="140" text-anchor="middle" font-size="22" opacity=".75">🌸</text>
+          <!-- Candles -->
+          <g class="candle-group" id="c1"><rect x="108" y="44" width="10" height="57" rx="3" fill="#fde8ef"/><rect x="108" y="44" width="10" height="8" rx="3" fill="#f5c0d0"/><g class="flame-g"><ellipse class="flame-outer" cx="113" cy="40" rx="6" ry="10" fill="#ffcc44"/><ellipse class="flame-mid" cx="113" cy="41" rx="4" ry="7" fill="#ff9922"/><ellipse class="flame-inner" cx="113" cy="43" rx="2" ry="4" fill="#fff5a0"/></g><g class="smoke-g" id="smoke1"></g></g>
+          <g class="candle-group" id="c2"><rect x="128" y="36" width="10" height="65" rx="3" fill="#fcd4de"/><rect x="128" y="36" width="10" height="8" rx="3" fill="#f5a8c0"/><g class="flame-g"><ellipse class="flame-outer" cx="133" cy="32" rx="6" ry="10" fill="#ffcc44"/><ellipse class="flame-mid" cx="133" cy="33" rx="4" ry="7" fill="#ff9922"/><ellipse class="flame-inner" cx="133" cy="35" rx="2" ry="4" fill="#fff5a0"/></g><g class="smoke-g" id="smoke2"></g></g>
+          <g class="candle-group" id="c3"><rect x="150" y="28" width="12" height="73" rx="3" fill="#fce8ef"/><rect x="150" y="28" width="12" height="9" rx="3" fill="#f5b8cc"/><g class="flame-g"><ellipse class="flame-outer" cx="156" cy="23" rx="7" ry="12" fill="#ffcc44"/><ellipse class="flame-mid" cx="156" cy="25" rx="5" ry="8" fill="#ff9922"/><ellipse class="flame-inner" cx="156" cy="27" rx="3" ry="5" fill="#fff5a0"/></g><g class="smoke-g" id="smoke3"></g></g>
+          <g class="candle-group" id="c4"><rect x="174" y="36" width="10" height="65" rx="3" fill="#fbd0de"/><rect x="174" y="36" width="10" height="8" rx="3" fill="#f5a0b8"/><g class="flame-g"><ellipse class="flame-outer" cx="179" cy="32" rx="6" ry="10" fill="#ffcc44"/><ellipse class="flame-mid" cx="179" cy="33" rx="4" ry="7" fill="#ff9922"/><ellipse class="flame-inner" cx="179" cy="35" rx="2" ry="4" fill="#fff5a0"/></g><g class="smoke-g" id="smoke4"></g></g>
+          <g class="candle-group" id="c5"><rect x="194" y="44" width="10" height="57" rx="3" fill="#fde8f0"/><rect x="194" y="44" width="10" height="8" rx="3" fill="#f5c0d0"/><g class="flame-g"><ellipse class="flame-outer" cx="199" cy="40" rx="6" ry="10" fill="#ffcc44"/><ellipse class="flame-mid" cx="199" cy="41" rx="4" ry="7" fill="#ff9922"/><ellipse class="flame-inner" cx="199" cy="43" rx="2" ry="4" fill="#fff5a0"/></g><g class="smoke-g" id="smoke5"></g></g>
+        </svg>
+        <div class="click-hint" id="click-hint">tap the cake to blow the candles ✨</div>
+      </div>
+
+      <!-- Bouquet right -->
+      <div class="bouquet right" id="bouquet-right">
+        <svg viewBox="0 0 120 200" width="120" height="200">
+          <line x1="60" y1="200" x2="65" y2="90" stroke="#5a8a5a" stroke-width="3.5"/>
+          <line x1="60" y1="200" x2="82" y2="85" stroke="#5a8a5a" stroke-width="3"/>
+          <line x1="60" y1="200" x2="42" y2="88" stroke="#5a8a5a" stroke-width="3"/>
+          <line x1="60" y1="200" x2="100" y2="100" stroke="#4a7a4a" stroke-width="2.5"/>
+          <line x1="60" y1="200" x2="25" y2="98" stroke="#4a7a4a" stroke-width="2.5"/>
+          <ellipse cx="75" cy="145" rx="16" ry="7" fill="#6aaa6a" opacity=".85" transform="rotate(40 75 145)"/>
+          <ellipse cx="45" cy="150" rx="14" ry="6" fill="#5a9a5a" opacity=".85" transform="rotate(-35 45 150)"/>
+          <ellipse cx="90" cy="130" rx="13" ry="5" fill="#6aaa6a" opacity=".7" transform="rotate(55 90 130)"/>
+          <g transform="translate(65,88)"><circle r="18" fill="#d84068"/><circle r="12" fill="#e87090"/><circle r="7" fill="#f5a0b5"/><circle r="3" fill="#ffd0e0"/></g>
+          <g transform="translate(84,82)"><circle r="14" fill="#c83060"/><circle r="9" fill="#e06080"/><circle r="5" fill="#f090a8"/><circle r="2" fill="#ffd0e0"/></g>
+          <g transform="translate(42,85)"><circle r="14" fill="#d04068"/><circle r="9" fill="#e87090"/><circle r="5" fill="#f5a0b8"/><circle r="2" fill="#ffd0e0"/></g>
+          <g transform="translate(102,97)"><circle r="11" fill="#b82858"/><circle r="7" fill="#d45878"/><circle r="4" fill="#ec98b0"/></g>
+          <g transform="translate(24,95)"><circle r="11" fill="#c03060"/><circle r="7" fill="#e06080"/><circle r="4" fill="#f090a8"/></g>
+          <circle cx="72" cy="68" r="3" fill="#fff" opacity=".8"/>
+          <circle cx="55" cy="62" r="2.5" fill="#fff" opacity=".7"/>
+          <circle cx="90" cy="78" r="2" fill="#fff" opacity=".6"/>
+          <path d="M45 190 Q60 180 75 190 Q60 185 45 190Z" fill="#f5a0c0" opacity=".9"/>
+          <ellipse cx="45" cy="190" rx="12" ry="6" fill="#f080a8" opacity=".8" transform="rotate(-20 45 190)"/>
+          <ellipse cx="75" cy="190" rx="12" ry="6" fill="#f080a8" opacity=".8" transform="rotate(20 75 190)"/>
+          <circle cx="60" cy="188" r="5" fill="#e05080"/>
+        </svg>
+      </div>
+
+      <!-- Table top -->
+      <div class="table-top">
+        <div class="table-cloth"></div>
+        <div class="table-edge"></div>
+      </div>
+    </div>
+
+    <!-- SPECIAL NOTE on bench -->
+    <div class="bench-note" id="bench-note">
+      <div class="note-paper">
+        <div class="note-inner">
+          <p class="note-title">💌 A note for you, babygal</p>
+          <div class="note-text" id="note-text"></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /scene-wrap -->
+
+  <!-- Birthday message with cat -->
+  <div class="bday-msg" id="bday-msg">
+    <div class="bday-inner">
+      <p class="bday-line1">Happy 18th Birthday</p>
+      <p class="bday-name">Tanziya</p>
+      <p class="bday-heart">❤️</p>
+    </div>
+  </div>
+
+  <!-- Cat meme -->
+  <div class="cat-wrap" id="cat-wrap">
+    <img src="assets/images/cat.jpg" alt="flowers for you" class="cat-img"/>
+    <p class="cat-caption">Happy Birthday Cutie 🌸</p>
+  </div>
+
+</div><!-- /birthday-scene -->
+
+<!-- Transition veil -->
+<div id="veil"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+  if (typeof gsap === 'undefined') {
+    document.body.innerHTML = '<div style="color:#f9c8d4;font-family:Georgia,serif;text-align:center;padding:20%;font-size:1.1rem;">⚠️ No internet connection — GSAP could not load.<br>Please connect and refresh.</div>';
+  }
+</script>
+<script src="js/timer.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
